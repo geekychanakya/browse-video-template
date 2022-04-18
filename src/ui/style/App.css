@@ -1,0 +1,199 @@
+.App.flexbox-container {
+  background-color: #ececec;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexbox-header {
+  position: fixed;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  padding-bottom: 10px;
+  background-color: #ececec;
+  z-index: 2;
+}
+
+.flexbox-items {
+  padding: 10vmin;
+}
+
+/* Content loader */
+.flexbox-loader {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.flexbox-loader > .loading {
+  width: 10vw;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .flexbox-loader > .loading {
+    animation: App-loader-spin infinite 10s linear;
+  }
+}
+@keyframes App-loader-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Videos */
+.flexbox-videos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  margin: 10px;
+  z-index: 0;
+}
+
+.flexbox-videos .flexbox-video {
+  margin-top: 6vh;
+}
+.flexbox-videos .flexbox-video .display-video > div {
+  width: 100% !important;
+}
+.flexbox-video .flexbox-author {
+  margin-bottom: 2px;
+  font-size: calc(8px + 2vmin);
+}
+
+.flexbox-video .flexbox-thumbnail {
+  position: relative;
+  height: 40vh;
+  width: 30vh;
+  overflow: hidden;
+  text-align: center;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 0 3px 5px rgba(110, 110, 110, 0.2);
+}
+
+.flexbox-video .flexbox-thumbnail .flexbox-author {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px 0 20px 10px;
+  text-align: left;
+}
+
+.flexbox-video .flexbox-thumbnail .flexbox-play {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+.flexbox-video .flexbox-thumbnail .flexbox-play img {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(238, 238, 238, 0.4);
+  border-radius: 50%;
+}
+
+.flexbox-video .flexbox-thumbnail img {
+  margin: auto;
+  height: 40vh;
+  max-width: none;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Comment Section */
+.flexbox-comments .comments-toggler .text {
+  font-size: 80%;
+  padding-left: 10px;
+}
+
+.flexbox-comments .comments.hidden {
+  display: none;
+}
+
+.flexbox-comments .comments .disabled {
+  background-color: rgb(202, 202, 202);
+  color: black;
+  cursor: not-allowed;
+}
+
+.flexbox-comments .comments > input {
+  margin: 20px 10px 0 10px;
+  width: -webkit-fill-available;
+  padding: 10px;
+  background-color: #fff;
+  border: 0;
+  border-radius: 5px;
+  outline: none;
+}
+
+.flexbox-comments .comment-btn,
+.flexbox-logout .logout-btn,
+.flexbox-login .login-btn {
+  margin: 20px auto;
+  padding: 6px;
+  width: 20vw;
+  background-color: rgb(15, 117, 185);
+  color: #fff;
+  cursor: pointer;
+}
+
+.flexbox-comments .comment-btn,
+.flexbox-logout .logout-btn {
+  background-color: rgb(153, 39, 24);
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+/* Login Page */
+.flexbox-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  width: 50vw;
+}
+.flexbox-login .login-logo {
+  margin: auto;
+}
+.flexbox-login .login-logo > img {
+  width: 20vh;
+}
+
+.flexbox-login .flexbox-user input,
+.flexbox-login .flexbox-password input {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  border: 0;
+  border-radius: 5px;
+  outline: none;
+}
+.flexbox-login .flexbox-user,
+.flexbox-login .flexbox-password {
+  position: relative;
+  font-size: 90%;
+}
+.flexbox-login .input-icon {
+  position: absolute;
+  right: 0;
+  margin: -25px -10px 0 0;
+}
+
+.flexbox-login .login-error {
+  color: rgb(172, 29, 29);
+  margin: auto;
+  font-size: 120%;
+}
