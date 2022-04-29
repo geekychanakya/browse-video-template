@@ -1,5 +1,5 @@
 import { videosActions } from '../slice/videos'
-const { REACT_APP_PEXELS_KEY } = process.env
+const { REACT_APP_PEXELS_KEY, REACT_APP_PEXELS_BASE } = process.env
 
 const fetchData = async (url) => {
   const response = await fetch(url, {
@@ -19,8 +19,8 @@ const fetchData = async (url) => {
 export const fetchVideoData = () => {
   return async (dispatch) => {
     try {
-      // fetch 10 videos initially
-      const videos = await fetchData('https://api.pexels.com/videos/search?query=Nature&size=medium&page=1&per_page=10')
+      // fetch 15 videos initially
+      const videos = await fetchData(`${REACT_APP_PEXELS_BASE}/videos/search?query=Nature&size=medium&page=1&per_page=15`)
       dispatch(videosActions.fetchVideos(videos))
     } catch (error) {
       dispatch(videosActions.fetchVideos({
